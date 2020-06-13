@@ -51,7 +51,7 @@ public class King implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             King movingP = (King) Utils.pieceAt(getX(), getY());
-            King targetP = (King) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new King(x, y, movingP.getIsRed(), movingP.getRank()));

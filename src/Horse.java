@@ -52,7 +52,7 @@ public class Horse implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             Horse movingP = (Horse) Utils.pieceAt(getX(), getY());
-            Horse targetP = (Horse) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new Horse(x, y, movingP.getIsRed(), movingP.getRank()));

@@ -51,7 +51,7 @@ public class Guard implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             Guard movingP = (Guard) Utils.pieceAt(getX(), getY());
-            Guard targetP = (Guard) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new Guard(x, y, movingP.getIsRed(), movingP.getRank()));

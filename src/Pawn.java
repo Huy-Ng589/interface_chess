@@ -51,7 +51,7 @@ public class Pawn implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             Pawn movingP = (Pawn) Utils.pieceAt(getX(), getY());
-            Pawn targetP = (Pawn) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new Pawn(x, y, movingP.getIsRed(), movingP.getRank()));

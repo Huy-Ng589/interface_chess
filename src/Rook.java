@@ -50,7 +50,7 @@ public class Rook implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             Rook movingP = (Rook) Utils.pieceAt(getX(), getY());
-            Rook targetP = (Rook) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new Rook(x, y, movingP.getIsRed(), movingP.getRank()));

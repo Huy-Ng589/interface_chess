@@ -51,7 +51,7 @@ public class Cannon implements Pieces {
         public void moveTo(int x, int y) {
             if (canMoveTo(x, y)) {
                 Cannon movingP = (Cannon) Utils.pieceAt(getX(), getY());
-                Cannon targetP = (Cannon) Utils.pieceAt(x, y);
+                Pieces targetP = Utils.pieceAt(x, y);
                 Board.piece.remove(movingP);
                 Board.piece.remove(targetP);
                 Board.piece.add(new Cannon(x, y, movingP.getIsRed(), movingP.getRank()));

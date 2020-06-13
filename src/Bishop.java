@@ -51,7 +51,7 @@ public class Bishop implements Pieces {
     public void moveTo(int x, int y) {
         if (canMoveTo(x, y)) {
             Bishop movingP = (Bishop) Utils.pieceAt(getX(), getY());
-            Bishop targetP = (Bishop) Utils.pieceAt(x, y);
+            Pieces targetP = Utils.pieceAt(x, y);
             Board.piece.remove(movingP);
             Board.piece.remove(targetP);
             Board.piece.add(new Bishop(x, y, movingP.getIsRed(), movingP.getRank()));
